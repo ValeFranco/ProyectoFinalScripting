@@ -11,12 +11,16 @@ namespace ProyectoFinalScripting
         internal uint poder;
         string nombre;
         internal byte vidas;
+       
+
 
         public Jugador(uint poder, string nombre)
         {
             Poder = poder;
             Nombre = nombre;
             vidas = 3;
+            
+
         }
 
         public uint Poder {
@@ -56,31 +60,46 @@ namespace ProyectoFinalScripting
         {
             bool victoria = false;
 
-            if (target.esObstaculo)
+            if (target.esObstaculo==true)
             {
                 Poder += target.poder;
                 victoria = true;
                 return victoria;
             }
 
-            else
+            if (target.esObstaculo == false) 
             {
-                
-                if(target.poder >= Poder)
+                if (target.poder > Poder)
+                {
+                    victoria = false;
+                    vidas--;
+                    return victoria;
+
+                }
+
+                if (target.poder == Poder)
                 {
                     victoria = false;
                     vidas--;
                     return victoria;
                 }
-
-                else
+                
+                
+                else if (target.poder < Poder)
                 {
-                    Poder += target.Poder;
+                    
+                    victoria = true;
                     return victoria;
+                    
                 }
+
+               
                
             }
 
+            return victoria;
+            
+           
         }
     }
 
