@@ -9,7 +9,7 @@ namespace ProyectoFinalScripting
 {
     public class TorreJugador : Torre
     {
-        internal Jugador jugador;
+         Jugador jugador;
         internal List<object> l_jugador;
 
         public TorreJugador(uint altura, Jugador jugador) : base(altura)
@@ -19,7 +19,7 @@ namespace ProyectoFinalScripting
             l_jugador = new List<object>((int)altura);
             l_jugador.Add(jugador);
         }
-        internal Jugador Jugador { get => jugador; set => jugador = value; }
+         public Jugador Jugador { get => jugador; set => jugador = value; }
         internal  void AumentarAltura()
         {
             List<object> newlist = new List<object>(((int)Altura) + 1);
@@ -29,7 +29,7 @@ namespace ProyectoFinalScripting
             Altura++;
         }
 
-        public bool Atacar(Atacable target, TorreEnemigo torre)
+        internal bool Atacar(Atacable target, TorreEnemigo torre)
         {
             bool victoria = false;
 
@@ -73,14 +73,12 @@ namespace ProyectoFinalScripting
                     torre.ReducirAltura(target);
                     AumentarAltura();
 
-                    
-                    /*
                     if (torre.Altura == 0 || torre.l_atacable.Count == 0)
                     {
-                       Juego.DestruirTorre(torre);
+                        torre = null;
                     }
                         
-                    */
+                  
                     return victoria;
                     
                     
@@ -107,13 +105,13 @@ namespace ProyectoFinalScripting
             {
                 Atacable test = objeto as Atacable;
 
-                if(!test.esObstaculo)
+                if (!test.esObstaculo)
                 {
                     l_jugador.Add(objeto);
                 }
 
                 else
-                    throw new Exception("no se pueden añadir enemigos a la torre")
+                    throw new Exception("no se pueden añadir enemigos a la torre");
             }
         }
 
