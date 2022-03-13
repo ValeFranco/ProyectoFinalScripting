@@ -10,7 +10,7 @@ namespace ProyectoFinalScripting
     {
         private uint altura;
         
-        protected uint Altura 
+        internal uint Altura 
         { get => altura; set
             { 
                 if (value != 0)
