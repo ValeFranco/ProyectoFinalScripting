@@ -16,8 +16,20 @@ namespace ProyectoFinalScripting
             this.jugador = jugador;
         }
         internal Jugador Jugador { get => jugador; set => jugador = value; }
-      
-       internal static void AumentarAltura()
+        internal static TorreJugador CrearTorreJugador(TorreJugador result)
+        {
+
+            Random random = new Random();
+            uint altura = (uint)(random.Next(1, 5));
+
+            uint poderJugador = (uint)(random.Next(1, 5));
+            Jugador jugador = new Jugador(poderJugador, "Sebastian");
+
+            result.Altura = altura;
+            result.Jugador = jugador;
+            return result;
+        }
+        internal static void AumentarAltura()
        {
 
        }
