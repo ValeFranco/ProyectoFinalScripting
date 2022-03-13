@@ -46,6 +46,18 @@ namespace ProyectoFinalScripting
         }
 
         [Test]
+        public void TorreJugador()
+        {
+
+        }
+
+          [Test]
+        public void TorreEnemigo()
+        {
+
+        }
+
+        [Test]
         public void Gana_SiEsMayor_Pierde_SiHayEmpate()
         {
             bool falso = false;
