@@ -10,42 +10,39 @@ namespace ProyectoFinalScripting
     public class TorreJugador : Torre
     {
          Jugador jugador;
-        internal List<object> l_jugador;
+        internal List<object> listaJugador;
 
         public TorreJugador(uint altura, Jugador jugador) : base(altura)
         {
             this.Altura = altura;
             this.jugador = jugador;
-            l_jugador = new List<object>((int)altura);
-            l_jugador.Add(jugador);
+            listaJugador = new List<object>((int)altura);
+            listaJugador.Add(jugador);
         }
          public Jugador Jugador { get => jugador; set => jugador = value; }
         internal  void AumentarAltura()
         {
-            List<object> newlist = new List<object>(((int)Altura) + 1);
-            newlist.Add(jugador);
+            List<object> listaNueva = new List<object>(((int)Altura) + 1);
+            listaNueva.Add(jugador);
 
-            l_jugador = newlist;
+            listaJugador = listaNueva;
             Altura++;
         }
 
-        internal bool Atacar(Atacable target, TorreEnemigo torre)
+        internal bool Atacar(Atacable target, TorreEnemigo torreEnemigo)
         {
             bool victoria = false;
 
-            if(torre.l_atacable.IndexOf(target)==-1)
+            if(torreEnemigo.listaAtacable.IndexOf(target)==-1)
             {
-                throw new Exception("el enemigo no está en esta torre");
-                
+                throw new Exception("el enemigo no está en esta torre");  
             }
-
             if (target.esObstaculo == true)
             {
                 jugador.poder += target.poder;
                 victoria = true;
                 return victoria;
             }
-
             if (target.esObstaculo == false)
             {
                 if (target.poder > jugador.poder)
@@ -53,53 +50,34 @@ namespace ProyectoFinalScripting
                     victoria = false;
                     jugador.vidas--;
                     return victoria;
-
                 }
-
                 if (target.poder == jugador.poder)
                 {
                     victoria = false;
                     jugador.vidas--;
                     return victoria;
-
                 }
-
-
                 else if (target.poder < jugador.poder)
                 {
-
                     victoria = true;
                     jugador.poder += target.poder;
-                    torre.ReducirAltura(target);
+                    torreEnemigo.ReducirAltura(target);
                     AumentarAltura();
 
-                    if (torre.altura == 0 || torre.l_atacable.Count == 0)
+                    if (torreEnemigo.altura == 0 || torreEnemigo.listaAtacable.Count == 0)
                     {
-                        torre = null;
+                        torreEnemigo = null;
                     }
-                        
-                  
                     return victoria;
-                    
-                    
-
                 }
-
-
-
             }
-
             return victoria;
-
-
         }
-
         public void AñadirATorre(object objeto)
-        {
-            
+        { 
             if (objeto is Jugador)
             {
-                l_jugador.Add(objeto);
+                listaJugador.Add(objeto);
             }
             else if (objeto is Atacable)
             {
@@ -107,14 +85,11 @@ namespace ProyectoFinalScripting
 
                 if (!test.esObstaculo)
                 {
-                    l_jugador.Add(objeto);
+                    listaJugador.Add(objeto);
                 }
-
                 else
                     throw new Exception("no se pueden añadir enemigos a la torre");
             }
         }
-
-    
     }
 }

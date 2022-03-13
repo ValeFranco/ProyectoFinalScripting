@@ -8,7 +8,7 @@ namespace ProyectoFinalScripting
 {
     public class Juego
     {
-        public List<Torre> l_torres = new List<Torre>();
+        public List<Torre> listaTorres = new List<Torre>();
         public TorreJugador torreJugador;
 
         public Juego()
@@ -20,14 +20,14 @@ namespace ProyectoFinalScripting
         {
             bool pasoNivel=true;
             string mensaje="No se ha ganado el nivel";
-            foreach (TorreEnemigo item in l_torres)
+            foreach (TorreEnemigo item in listaTorres)
             {
                 if (item==null)
                 {
-                    l_torres.Remove(item);
+                    listaTorres.Remove(item);
                 }
             }
-            if (l_torres.Count == 0)
+            if (listaTorres.Count == 0)
             {
                 pasoNivel = true;
             }
@@ -35,10 +35,7 @@ namespace ProyectoFinalScripting
             {
                 mensaje = "Pasaste de nivel";
             }
-            return mensaje;
-            
-        }
-        
+            return mensaje;   
+        }        
     }
-
 }

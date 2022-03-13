@@ -28,16 +28,15 @@ namespace ProyectoFinalScripting
         [Test]
         public void TestTorreContineJugador()
         {
-
             Jugador jugador = new Jugador(5, "Sebastian");
             uint altura = 3;
             TorreJugador torreTest = new TorreJugador(altura, jugador);
             List<Jugador> listaJugadorTest = new List<Jugador>(3);
             listaJugadorTest.Add(jugador);
 
-            Assert.AreEqual(listaJugadorTest, torreTest.l_jugador);
-            
+            Assert.AreEqual(listaJugadorTest, torreTest.listaJugador); 
         }
+
         [Test]
         public void TestTorreTieneNiveles()
         {
@@ -52,10 +51,7 @@ namespace ProyectoFinalScripting
             Jugador testJugador;
             var exception = Assert.Throws<System.Exception>(() => testJugador = new Jugador(0, "carlos"));
             Assert.AreEqual("el poder inicial del usuario no puede ser cero", exception.Message);
-
         }
-
-
 
         [Test]
         public void GanaContraObstaculo()
@@ -69,7 +65,6 @@ namespace ProyectoFinalScripting
             torreJugador.Atacar(obstaculo, torreEnemigo);
 
             Assert.AreEqual(18, torreJugador.Jugador.poder);
-
         }
 
         [Test]
@@ -87,17 +82,16 @@ namespace ProyectoFinalScripting
 
             juego.LimpiarLista();
 
-            Assert.AreEqual(torreEsperada, juego.l_torres);
+            Assert.AreEqual(torreEsperada, juego.listaTorres);
         }
 
         [Test]
         public void PierdeVida()
         {
             bool falso = false;
+
             Jugador jugador2 = new Jugador(15, "Pruebita");
             TorreJugador torreJugador = new TorreJugador(3, jugador2);
-
-
 
             Atacable derrota = new Atacable(falso, 33);
             TorreEnemigo torreEnemigo = new TorreEnemigo(4, derrota);
@@ -105,13 +99,10 @@ namespace ProyectoFinalScripting
             torreJugador.Atacar(derrota, torreEnemigo);
 
             Assert.AreEqual(2, torreJugador.Jugador.vidas);
-
-
         }
 
-
         [Test]
-        public void Gana_SiEsMayor_Pierde_SiHayEmpate()
+        public void GanaSiEsMayorPierdeSiHayEmpate()
         {
             bool falso = false;
             
@@ -122,8 +113,7 @@ namespace ProyectoFinalScripting
 
             //Assert.IsFalse(jugador.Atacar(derrota));
             //Assert.IsTrue(jugador.Atacar(victoria));
-            //Assert.IsFalse(jugador.Atacar(empate));
-            
+            //Assert.IsFalse(jugador.Atacar(empate));  
         }
 
         [Test]
@@ -156,8 +146,7 @@ namespace ProyectoFinalScripting
 
             juego.LimpiarLista();
 
-            Assert.AreEqual(torreEsperada, juego.l_torres);
-
+            Assert.AreEqual(torreEsperada, juego.listaTorres);
         }
 
         [Test]
@@ -175,17 +164,16 @@ namespace ProyectoFinalScripting
             TorreEnemigo torreEnemigo1 = new TorreEnemigo(2, atacable1);
             TorreEnemigo torreEnemigo2 = new TorreEnemigo(2, atacable2);
 
-            torreEnemigo1.l_atacable.Add(atacable3);
-            torreEnemigo2.l_atacable.Add(atacable4);
+            torreEnemigo1.listaAtacable.Add(atacable3);
+            torreEnemigo2.listaAtacable.Add(atacable4);
 
             Jugador jugador = new Jugador(6, "Valentina");
             TorreJugador torreJugador = new TorreJugador(3, jugador);
             juego.torreJugador = torreJugador;
 
-            juego.l_torres.Add(torreEnemigo1);
-            juego.l_torres.Add(torreEnemigo2);
-           
-
+            juego.listaTorres.Add(torreEnemigo1);
+            juego.listaTorres.Add(torreEnemigo2);
+        
             torreJugador.Atacar(atacable1, torreEnemigo1);
             torreJugador.Atacar(atacable3, torreEnemigo1);
 
@@ -196,11 +184,6 @@ namespace ProyectoFinalScripting
 
             string mensaje = juego.LimpiarLista();
             Assert.AreEqual("Pasaste de nivel", mensaje);
-            
-
-
         }
-
-
     }
 }

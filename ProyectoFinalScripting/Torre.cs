@@ -27,7 +27,5 @@ namespace ProyectoFinalScripting
         {
             this.Altura = altura;
         }
-
-      
     }
 }
