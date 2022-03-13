@@ -55,17 +55,60 @@ namespace ProyectoFinalScripting
 
         }
 
+
+
         [Test]
-        public void TorreJugador()
+        public void GanaContraObstaculo()
         {
+            Jugador jugador4 = new Jugador(15, "Pruebita");
+            TorreJugador torreJugador = new TorreJugador(3, jugador4);
+
+            Atacable obstaculo = new Atacable(true, 3);
+            TorreEnemigo torreEnemigo = new TorreEnemigo(4, obstaculo);
+
+            torreJugador.Atacar(obstaculo, torreEnemigo);
+
+            Assert.AreEqual(18, torreJugador.Jugador.poder);
 
         }
 
-          [Test]
-        public void TorreEnemigo()
+        [Test]
+        public void UltimaTorreEnemigo()
         {
+            List<Torre> torreEsperada = new List<Torre>(0);
+            Atacable atacable = new Atacable(false, 2);
+
+            Jugador jugador = new Jugador(5, "Juan");
+            TorreJugador torreJugador = new TorreJugador(3, jugador);
+
+            TorreEnemigo torreEnemigo = new TorreEnemigo(1, atacable);
+
+            torreJugador.Atacar(atacable, torreEnemigo);
+
+            juego.LimpiarLista();
+
+            Assert.AreEqual(torreEsperada, juego.l_torres);
+        }
+
+        [Test]
+        public void PierdeVida()
+        {
+            bool falso = false;
+            Jugador jugador2 = new Jugador(15, "Pruebita");
+            TorreJugador torreJugador = new TorreJugador(3, jugador2);
+
+
+
+            Atacable derrota = new Atacable(falso, 33);
+            TorreEnemigo torreEnemigo = new TorreEnemigo(4, derrota);
+
+            torreJugador.Atacar(derrota, torreEnemigo);
+
+            Assert.AreEqual(2, torreJugador.Jugador.vidas);
+
 
         }
+
 
         [Test]
         public void Gana_SiEsMayor_Pierde_SiHayEmpate()
@@ -81,6 +124,21 @@ namespace ProyectoFinalScripting
             //Assert.IsTrue(jugador.Atacar(victoria));
             //Assert.IsFalse(jugador.Atacar(empate));
             
+        }
+
+        [Test]
+
+        public void AumentaPoderPersonaje()
+        {
+            Jugador jugador4 = new Jugador(15, "Pruebita");
+            TorreJugador torreJugador = new TorreJugador(3, jugador4);
+
+            Atacable victoria = new Atacable(false, 3);
+            TorreEnemigo torreEnemigo = new TorreEnemigo(4, victoria);
+
+            torreJugador.Atacar(victoria, torreEnemigo);
+
+            Assert.AreEqual(18, torreJugador.Jugador.poder);
         }
 
         [Test]

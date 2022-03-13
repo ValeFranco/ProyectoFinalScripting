@@ -63,3 +63,4 @@ crashlytics-build.properties
 *.dll
 ProyectoFinalScripting/obj/Debug/net5.0/ref/ProyectoFinalScripting.dll
 *.dll
+*.dll
