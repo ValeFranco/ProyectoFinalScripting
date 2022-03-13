@@ -31,6 +31,20 @@ namespace ProyectoFinalScripting
         }
 
         [Test]
+        public void TorreJugador()
+        {
+          
+            
+        }
+
+         [Test]
+        public void TorreEnemigo()
+        {
+          
+            
+        }
+
+        [Test]
         public void TestJugador()
         {
             Jugador testJugador;
