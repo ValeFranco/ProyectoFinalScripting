@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using static ProyectoFinalScripting.TorreJugador;
+using static ProyectoFinalScripting.Jugador;
+using System.Collections.Generic;
 
 namespace ProyectoFinalScripting
 {
@@ -24,16 +26,24 @@ namespace ProyectoFinalScripting
         }
 
         [Test]
-        public void TestCrearTorreJugador()
+        public void TestTorreContineJugador()
         {
-            // Assert.IsTrue(new TorreJugador(3,Test1Jugador)==);
 
             Jugador jugador = new Jugador(5, "Sebastian");
             uint altura = 3;
+            TorreJugador torreTest = new TorreJugador(altura, jugador);
+            List<Jugador> listaJugadorTest = new List<Jugador>(3);
+            listaJugadorTest.Add(jugador);
 
-            Assert.IsTrue(new TorreJugador(altura, jugador) == CrearTorreJugador(Test1torreJugador));
-            Assert.AreEqual(new TorreJugador(1, jugador), CrearTorreJugador(Test1torreJugador));
-
+            Assert.AreEqual(listaJugadorTest, torreTest.l_jugador);
+            
+        }
+        [Test]
+        public void TestTorreTieneNiveles()
+        {
+            TorreJugador testTorreJugador;
+            var exception = Assert.Throws<System.Exception>(() => testTorreJugador = new TorreJugador(0, Test1Jugador));
+            Assert.AreEqual("La altura de la torre no puede ser cero", exception.Message);
         }
 
         [Test]
@@ -51,7 +61,7 @@ namespace ProyectoFinalScripting
             bool falso = false;
             
             Jugador jugador = new Jugador(15, "Pruebita");
-            Atacable empate = new Atacable(falso, 15);
+            Atacable empate = new Atacable(falso, 18);
             Atacable victoria = new Atacable(falso, 3);
             Atacable derrota = new Atacable(falso, 33);
 

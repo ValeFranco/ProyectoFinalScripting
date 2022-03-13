@@ -9,7 +9,20 @@ namespace ProyectoFinalScripting
     public abstract class Torre
     {
         private uint altura;
-        protected uint Altura { get => altura; set => altura = value; }
+        
+        protected uint Altura 
+        { get => altura; set
+            { 
+                if (value != 0)
+                {
+                    altura = value;
+                }
+                else
+                {
+                    throw new Exception("La altura de la torre no puede ser cero");
+                }
+            } 
+        }
         public Torre(uint altura)
         {
             this.Altura = altura;

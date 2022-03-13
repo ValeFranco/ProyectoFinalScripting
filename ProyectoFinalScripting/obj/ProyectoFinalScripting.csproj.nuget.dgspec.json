@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Universidad\\scripting\\ProyectoFinalScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj": {}
+    "D:\\Universidad\\scripting\\ProyectoScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj": {}
   },
   "projects": {
-    "D:\\Universidad\\scripting\\ProyectoFinalScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj": {
+    "D:\\Universidad\\scripting\\ProyectoScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universidad\\scripting\\ProyectoFinalScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj",
+        "projectUniqueName": "D:\\Universidad\\scripting\\ProyectoScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj",
         "projectName": "ProyectoFinalScripting",
-        "projectPath": "D:\\Universidad\\scripting\\ProyectoFinalScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj",
+        "projectPath": "D:\\Universidad\\scripting\\ProyectoScripting\\ProyectoFinalScripting\\ProyectoFinalScripting.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Universidad\\scripting\\ProyectoFinalScripting\\ProyectoFinalScripting\\obj\\",
+        "outputPath": "D:\\Universidad\\scripting\\ProyectoScripting\\ProyectoFinalScripting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
