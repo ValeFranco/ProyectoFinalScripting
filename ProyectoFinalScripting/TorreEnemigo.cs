@@ -27,11 +27,7 @@ namespace ProyectoFinalScripting
        internal void ReducirAltura(Atacable target)
        {
             l_atacable.Remove(target);
-            Altura--;
-
-            
-
-            
+            altura--;
 
        }
 

@@ -73,7 +73,7 @@ namespace ProyectoFinalScripting
                     torre.ReducirAltura(target);
                     AumentarAltura();
 
-                    if (torre.Altura == 0 || torre.l_atacable.Count == 0)
+                    if (torre.altura == 0 || torre.l_atacable.Count == 0)
                     {
                         torre = null;
                     }

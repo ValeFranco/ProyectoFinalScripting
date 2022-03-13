@@ -24,6 +24,7 @@ namespace ProyectoFinalScripting
                     l_torres.Remove(item);
                 }
             }
+            
         }
         
     }

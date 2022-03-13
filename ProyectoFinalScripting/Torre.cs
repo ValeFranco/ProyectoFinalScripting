@@ -8,7 +8,7 @@ namespace ProyectoFinalScripting
 {
     public abstract class Torre
     {
-        private uint altura;
+        public uint altura;
         
         internal uint Altura 
         { get => altura; set
