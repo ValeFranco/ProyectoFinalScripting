@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProyectoFinalScripting
 {
-    class Jugador
+    public class Jugador
     {
         internal uint poder;
         string nombre;

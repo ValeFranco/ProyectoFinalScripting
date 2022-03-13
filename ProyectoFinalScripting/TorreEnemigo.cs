@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinalScripting
 {
-    class TorreEnemigo : Torre
+    public class TorreEnemigo : Torre
 
     {
         Atacable atacable;
         internal List<Atacable> l_atacable;
+        bool destruible;
         public TorreEnemigo(uint altura, Atacable atacable) : base(altura)
         {
 
@@ -18,6 +19,8 @@ namespace ProyectoFinalScripting
             this.atacable = atacable;
             l_atacable = new List<Atacable>((int)altura);
             l_atacable.Add(atacable);
+            destruible = false;
+            
             
         }
 
@@ -25,6 +28,11 @@ namespace ProyectoFinalScripting
        {
             l_atacable.Remove(target);
             Altura--;
+
+            
+
+            
+
        }
 
         static void LlenarTorre()

@@ -28,9 +28,6 @@ namespace ProyectoFinalScripting
             this.Altura = altura;
         }
 
-        internal static void DestruirTorre()
-        {
-
-        }
+      
     }
 }
