@@ -62,14 +62,14 @@ namespace ProyectoFinalScripting
 
             if (target.esObstaculo==true)
             {
-                Poder += target.poder;
+                poder += target.poder;
                 victoria = true;
                 return victoria;
             }
 
             if (target.esObstaculo == false) 
             {
-                if (target.poder > Poder)
+                if (target.poder > poder)
                 {
                     victoria = false;
                     vidas--;
@@ -77,7 +77,7 @@ namespace ProyectoFinalScripting
 
                 }
 
-                if (target.poder == Poder)
+                if (target.poder == poder)
                 {
                     victoria = false;
                     vidas--;
@@ -85,10 +85,11 @@ namespace ProyectoFinalScripting
                 }
                 
                 
-                else if (target.poder < Poder)
+                else if (target.poder < poder)
                 {
                     
                     victoria = true;
+                    poder += target.poder;
                     return victoria;
                     
                 }

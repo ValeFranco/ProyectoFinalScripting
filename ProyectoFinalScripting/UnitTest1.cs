@@ -45,7 +45,7 @@ namespace ProyectoFinalScripting
             bool falso = false;
             
             Jugador jugador = new Jugador(15, "Pruebita");
-            Atacable empate = new Atacable(falso, 15);
+            Atacable empate = new Atacable(falso, 18);
             Atacable victoria = new Atacable(falso, 3);
             Atacable derrota = new Atacable(falso, 33);
 
