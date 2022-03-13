@@ -57,52 +57,7 @@ namespace ProyectoFinalScripting
             }
         }
 
-        public bool Atacar(Atacable target)
-        {
-            bool victoria = false;
-
-            if (target.esObstaculo==true)
-            {
-                poder += target.poder;
-                victoria = true;
-                return victoria;
-            }
-
-            if (target.esObstaculo == false) 
-            {
-                if (target.poder > poder)
-                {
-                    victoria = false;
-                    vidas--;
-                    return victoria;
-
-                }
-
-                if (target.poder == poder)
-                {
-                    victoria = false;
-                    vidas--;
-                    return victoria;
-                }
-                
-                
-                else if (target.poder < poder)
-                {
-                    
-                    victoria = true;
-                    poder += target.poder;
-                    return victoria;
-                    
-                }
-
-               
-               
-            }
-
-            return victoria;
-            
-           
-        }
+       
     }
 
     

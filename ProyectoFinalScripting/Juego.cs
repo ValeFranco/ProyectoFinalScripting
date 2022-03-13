@@ -9,21 +9,33 @@ namespace ProyectoFinalScripting
     public class Juego
     {
         public List<Torre> l_torres = new List<Torre>();
+        public TorreJugador torreJugador;
 
         public Juego()
         {
     
         }
 
-        public void LimpiarLista()
+        public string LimpiarLista()
         {
-            foreach(Torre item in l_torres)
+            bool pasoNivel=true;
+            string mensaje="No se ha ganado el nivel";
+            foreach (TorreEnemigo item in l_torres)
             {
-                if (item == null)
+                if (item==null)
                 {
                     l_torres.Remove(item);
                 }
             }
+            if (l_torres.Count == 0)
+            {
+                pasoNivel = true;
+            }
+            if (pasoNivel)
+            {
+                mensaje = "Pasaste de nivel";
+            }
+            return mensaje;
             
         }
         

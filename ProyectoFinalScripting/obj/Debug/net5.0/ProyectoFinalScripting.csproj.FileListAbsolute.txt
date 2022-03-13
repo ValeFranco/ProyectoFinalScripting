@@ -98,4 +98,3 @@ D:\Universidad\scripting\ProyectoScripting\ProyectoFinalScripting\obj\Debug\net5
 D:\Universidad\scripting\ProyectoScripting\ProyectoFinalScripting\obj\Debug\net5.0\ref\ProyectoFinalScripting.dll
 D:\Universidad\scripting\ProyectoScripting\ProyectoFinalScripting\obj\Debug\net5.0\ProyectoFinalScripting.pdb
 D:\Universidad\scripting\ProyectoScripting\ProyectoFinalScripting\obj\Debug\net5.0\ProyectoFinalScripting.genruntimeconfig.cache
-D:\Universidad\scripting\ProyectoScripting\ProyectoFinalScripting\obj\Debug\net5.0\ProyectoFinalScripting.csproj.AssemblyReference.cache
